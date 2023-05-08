@@ -5,7 +5,7 @@
 
 
 users = 1
-rounds = 3
+rounds = 100
 C = 1
 E = 5
 B = 10 # 'all' for a single minibatch
@@ -221,7 +221,7 @@ def recvall(sock, n):
 
 
 # host_name = input("IP address: ")
-host_name = '172.31.2.147'
+host_name = '172.31.26.96'
 port_number = 12345
 max_recv = 100000
 

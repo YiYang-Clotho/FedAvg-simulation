@@ -269,7 +269,6 @@ while r < rounds:
     s.connect((host_name, port_number))
     msg = recv_msg(s)
     r = msg['current_round']
-    print(r)
     rounds = msg['rounds'] 
     client_id = msg['client_id']
     global_weights = msg['weight']

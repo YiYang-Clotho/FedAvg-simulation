@@ -277,7 +277,7 @@ while r < rounds:
     local_model.compile(loss=loss, optimizer=optimizer, metrics=metrics)
     #     history = local_model.fit(client_dataset_batched[client_order], epochs=E, verbose=1)
     local_model.fit(client_dataset_batched[client_order], epochs=E, verbose=1)
-    print('Round', r, 'finished')
+    print('Round', r + 1, 'finished')
     #     evaluate = local_model.evaluate(test_batched)
 
     weight = local_model.get_weights()

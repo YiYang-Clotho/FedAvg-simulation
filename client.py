@@ -268,6 +268,8 @@ while r < rounds:
     s = socket.socket()
     s.connect((host_name, port_number))
     msg = recv_msg(s)
+    r = msg['current_round']
+    print(r)
     rounds = msg['rounds'] 
     client_id = msg['client_id']
     global_weights = msg['weight']
@@ -282,13 +284,12 @@ while r < rounds:
 
     weight = local_model.get_weights()
     reply = {
+        'current_round': r,
         'rounds': rounds,
         'client_id': client_id,
         'weight': weight
     }
     send_msg(s, reply)
-    
-    r += 1
 
 
 # In[ ]:

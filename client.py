@@ -221,8 +221,8 @@ def recvall(sock, n):
 
 
 # host_name = input("IP address: ")
-# server 172.31.26.96
-host_name = '172.31.24.39'
+# server 172.31.24.39
+host_name = '172.31.26.96'
 port_number = 12345
 max_recv = 100000
 

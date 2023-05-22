@@ -96,13 +96,13 @@ class CNN:
 # In[5]:
 
 
-model = CNN()
-global_model = model.build((28,28,1))
-initial_weights = global_model.get_weights()
+# model = CNN()
+# global_model = model.build((28,28,1))
+# initial_weights = global_model.get_weights()
 
 # restart the model from the folder
-# global_model = tf.keras.models.load_model('global_model.h5')
-# initial_weights = global_model.get_weights()
+global_model = tf.keras.models.load_model('global_model.h5')
+initial_weights = global_model.get_weights()
 
 global_model.summary()
 
@@ -301,30 +301,30 @@ s.listen(10)
 loss='categorical_crossentropy'
 metrics = ['accuracy']
 cce = tf.keras.losses.CategoricalCrossentropy()
-result_per_lr = {}    
+# result_per_lr = {}    
 dir = ''
-# with open(dir+'result_per_lr_10_1_5_0.1.pickle', 'rb') as handle:
-#     result_per_lr = pickle.load(handle)
+with open(dir+'result_per_lr_10_1_5_0.1.pickle', 'rb') as handle:
+    result_per_lr = pickle.load(handle)
 start = time.time()
 
 
     
 for lr in lrs:
-#     train_losses = result_per_lr[lr]['train_losses']
-#     train_accs = result_per_lr[lr]['train_accs']
-#     test_losses = result_per_lr[lr]['test_losses']
-#     test_accs = result_per_lr[lr]['test_accs']
+    train_losses = result_per_lr[lr]['train_losses']
+    train_accs = result_per_lr[lr]['train_accs']
+    test_losses = result_per_lr[lr]['test_losses']
+    test_accs = result_per_lr[lr]['test_accs']
     
-    train_losses = []
-    train_accs = []
-    test_losses = []
-    test_accs = []
+#     train_losses = []
+#     train_accs = []
+#     test_losses = []
+#     test_accs = []
     
     print('\nlearning rate: {}'.format(lr))
     
-    saved_round = 99
-#     for r in range(saved_round,rounds):
-    for r in range(rounds):
+    saved_round = 88
+    for r in range(saved_round,rounds):
+#     for r in range(rounds):
         train_loss = 0
         train_acc = 0
         test_loss = 0

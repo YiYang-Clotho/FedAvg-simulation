@@ -6,7 +6,6 @@ import sys
 
 # sys.argv[0] is client.py
 # sys.argv[1] is the client order number, which determines the data in this experiment
-# sys.argv[2] is the server IP address
 users = 1
 rounds = 100
 C = 1
@@ -225,8 +224,8 @@ def recvall(sock, n):
 
 # host_name = input("IP address: ")
 # server 172.31.26.96 '172.31.24.39'
-host_string = sys.argv[2]
-host_name = host_string
+host_string = '172.31.20.147'
+host_name = '172.31.20.147'
 port_number = 12345
 max_recv = 100000
 

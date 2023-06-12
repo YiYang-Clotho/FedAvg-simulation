@@ -203,8 +203,8 @@ def average_weights(weights_list):
 # In[ ]:
 
 
-# host_name = socket.gethostbyname(socket.gethostname())
-host_name = '172.31.2.147' #172.31.24.39
+host_name = socket.gethostbyname(socket.gethostname())
+# host_name = '172.31.2.147' #172.31.24.39
 port_number = 12345
 print(host_name)
 
@@ -278,9 +278,6 @@ for lr in lrs:
 #     saved_round = 99
 #     for r in range(saved_round,rounds):
     for r in range(rounds):
-        global weight_count
-        global global_weights
-        global weights_list
     
         msg = {
             'current_round': r,

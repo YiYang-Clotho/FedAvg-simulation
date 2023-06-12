@@ -8,6 +8,7 @@ import sys
 
 # sys.argv[0] is client.py
 # sys.argv[1] is the client order number, which determines the data in this experiment
+# example: python c1_v1.py 0
 users = 1
 rounds = 100
 C = 1
@@ -263,7 +264,7 @@ metrics = ['accuracy']
 # train
 
 # s.connect((host_name, port_number))
-weight = 0
+
 while r < rounds:
     msg = recv_msg(s)
     rounds = msg['rounds']
@@ -282,8 +283,6 @@ while r < rounds:
         'weight': weight
     }
     send_msg(s, reply)
-    
-    r += 1
 
 
 # In[ ]:

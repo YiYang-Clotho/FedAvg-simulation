@@ -70,10 +70,10 @@ mnist = tf.keras.datasets.mnist
 
 def noniid_partition(y_train):
     """
-    sort the data by digit label, divide it into 200 shards of size 300, and assign each of 10 clients 20 shards.
+    sort the data by digit label, divide it into 20 shards of size 3000, and assign each of 10 clients 2 shards.
     """
-    n_shards = 200
-    n_per_shard = 300
+    n_shards = 20
+    n_per_shard = 3000
     
     indexes_per_client = {}
     indexes = y_train.argsort()
